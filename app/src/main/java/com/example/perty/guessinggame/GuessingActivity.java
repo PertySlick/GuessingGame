@@ -1,8 +1,13 @@
 package com.example.perty.guessinggame;
 
-/**
- * Created by Perty on 10/8/2017.
- */
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-class GuessingActivity {
+public class GuessingActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_guessing);
+    }
 }
