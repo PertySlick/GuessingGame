@@ -9,6 +9,7 @@
 
 
     <TextView
+        android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -26,6 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" >
 
         <Button
+            android:id="@+id/submit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/landing_start_button_text" />
