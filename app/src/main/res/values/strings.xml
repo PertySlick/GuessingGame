@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Number Guess</string>
+    <string name="landing_header">Welcome to Number Guess</string>
+    <string name="landing_start_button_text">Start Game</string>
+</resources>
