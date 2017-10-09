@@ -16,18 +16,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
+/**
+ * Initiates and displays the results activity
+ */
 public class ResultsActivity extends AppCompatActivity {
 
 
 // FIELDS, CONSTANTS, AND OBJECTS
 
 
-    String intentText;
+    private String intentText;
 
-    Button submit;
-    TextView header;
-    TextView count;
+    private Button submit;
+    private TextView header;
+    private TextView count;
 
+    /**
+     * Initiate output during onCeate stage
+     * @param savedInstanceState saved instance
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +46,20 @@ public class ResultsActivity extends AppCompatActivity {
         bindFunctionality();
     }
 
-    // Identify necessary views
+
+    /**
+     * Identify necessary views
+     */
     private void locateViews() {
         submit = (Button) findViewById(R.id.play_again_button);
         header = (TextView) findViewById(R.id.guess_count_text);
         count = (TextView) findViewById(R.id.guess_count_number);
     }
 
-    // Read and utilize expected intents
+
+    /**
+     * Read and utilize expected intents
+     */
     private void readIntents() {
         if (getIntent().hasExtra(GuessingActivity.intentTag)) {
             intentText = getIntent().getStringExtra(GuessingActivity.intentTag);
@@ -53,7 +67,10 @@ public class ResultsActivity extends AppCompatActivity {
         }
     }
 
-    // Apply functionality to views
+
+    /**
+     * Apply functionality to views
+     */
     private void bindFunctionality() {
         submit.setOnClickListener(new View.OnClickListener() {
 
