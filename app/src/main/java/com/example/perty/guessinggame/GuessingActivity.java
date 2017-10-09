@@ -84,5 +84,6 @@ public class GuessingActivity extends AppCompatActivity {
     // Reuseable Toast maker
     private void errorToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+        input.setText("");
     }
 }
