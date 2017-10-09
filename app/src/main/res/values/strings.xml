@@ -7,6 +7,9 @@
     <string name="guessing_header">Guess a number between %1$d and %2$d</string>
     <string name="guessing_guess_hint">Enter a number</string>
     <string name="guessing_guess_button_text">Check</string>
+    <string name="guessing_error_empty">Please enter a guess!</string>
+    <string name="guessing_result_low">%1$d is too low</string>
+    <string name="guessing_result_high">%1$d is too high</string>
     <!-- Results Activity -->
     <string name="results_guess_count_text">It took you this many guesses:</string>
     <string name="results_play_again_button_text">Play Again</string>

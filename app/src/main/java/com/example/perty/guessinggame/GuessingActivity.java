@@ -5,7 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import numberguess.NumberGuess;
 
 public class GuessingActivity extends AppCompatActivity {
 
@@ -13,8 +17,11 @@ public class GuessingActivity extends AppCompatActivity {
 // FIELDS, CONSTANTS, AND OBJECTS
 
 
-    TextView header;
-    Button submit;
+    protected static String intentTag = "count";
+    private TextView header;
+    private EditText input;
+    private Button submit;
+    private NumberGuess game;
 
 
 // METHODS
@@ -25,6 +32,7 @@ public class GuessingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guessing);
         locateViews();
+        initiateSubroutines();
         bindFunctionality();
     }
 
@@ -32,6 +40,12 @@ public class GuessingActivity extends AppCompatActivity {
     private void locateViews() {
         submit = (Button) findViewById(R.id.submit_button);
         header = (TextView) findViewById(R.id.header);
+        input = (EditText) findViewById(R.id.guess_input);
+    }
+
+    // Initiates the NumberGuess subroutine
+    private void initiateSubroutines() {
+       game = new NumberGuess();
     }
 
     // Apply functionality to views
@@ -40,10 +54,29 @@ public class GuessingActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), GuessingActivity.class);
-                startActivity(intent);
-            }
 
+                if (input.getText().toString().trim().length() == 0) {
+                    errorToast("@string/guessing_error_empty");
+                } else {
+                    int guess = Integer.parseInt(input.getText().toString());
+                    int result = game.checkGuess(guess);
+
+                    if (result < 0) {
+                        errorToast(getString(R.string.guessing_result_low, guess));
+                    } else if (result > 0) {
+                        errorToast(getString(R.string.guessing_result_high, guess));
+                    } else {
+                        Intent intent = new Intent(getApplicationContext(), ResultsActivity.class);
+                        intent.putExtra(intentTag, game.getGuessCount());
+                        startActivity(intent);
+                    }
+                }
+            }
         });
+    }
+
+    // Reuseable Toast maker
+    private void errorToast(String message) {
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
     }
 }
