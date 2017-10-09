@@ -73,7 +73,7 @@ public class GuessingActivity extends AppCompatActivity {
                         errorToast(getString(R.string.guessing_result_high, guess));
                     } else {
                         Intent intent = new Intent(getApplicationContext(), ResultsActivity.class);
-                        intent.putExtra(intentTag, game.getGuessCount());
+                        intent.putExtra(intentTag, String.valueOf(game.getGuessCount()));
                         startActivity(intent);
                     }
                 }
