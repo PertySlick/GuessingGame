@@ -15,19 +15,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
+/**
+ * Initiates and displays the landing page activity.
+ */
 public class LandingActivity extends AppCompatActivity {
 
 
 // FIELDS CONSTANTS AND OBJECTS
 
 
-    Button submit;
-    TextView header;
+    private Button submit;
 
 
 // METHODS
 
 
+    /**
+     * Initiate output during onCeate stage
+     * @param savedInstanceState saved instance
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +44,17 @@ public class LandingActivity extends AppCompatActivity {
         bindFunctionality();
     }
 
-    // Identify necessary views
+    /**
+     * Identify necessary views
+     */
     private void locateViews() {
         submit = (Button) findViewById(R.id.submit_button);
-        header = (TextView) findViewById(R.id.header);
     }
 
-    // Apply functionality to views
+
+    /**
+     * Apply functionality to views
+     */
     private void bindFunctionality() {
         submit.setOnClickListener(new View.OnClickListener() {
 
