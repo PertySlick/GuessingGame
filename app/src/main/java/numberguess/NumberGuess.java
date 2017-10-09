@@ -59,7 +59,7 @@ public class NumberGuess {
      */
     public int checkGuess(int guess) {
         guessCount++;
-        return targetNumber - guess;
+        return guess - targetNumber;
     }
 
 
