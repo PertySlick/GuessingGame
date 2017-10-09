@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import numberguess.NumberGuess;
+import com.example.perty.numberguess.NumberGuess;
 
 public class GuessingActivity extends AppCompatActivity {
 

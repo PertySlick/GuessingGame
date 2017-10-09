@@ -1,4 +1,4 @@
-package numberguess;
+package com.example.perty.numberguess;
 
 import java.util.Random;
 
