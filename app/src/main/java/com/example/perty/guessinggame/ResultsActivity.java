@@ -1,3 +1,12 @@
+/* Name: Timothy Roush
+ * Date: 10/07/17
+ * Filename: ResultsActivity.java
+ * Assignment: GuessingGame (#2)
+ * Description: Displays the number of attempts it took the user to guess
+ *              the randomly generated number while providing an
+ *              opportunity to play again.
+ */
+
 package com.example.perty.guessinggame;
 
 import android.content.Intent;

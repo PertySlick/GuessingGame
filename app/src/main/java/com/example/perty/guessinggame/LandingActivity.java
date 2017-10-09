@@ -1,3 +1,11 @@
+/* Name: Timothy Roush
+ * Date: 10/07/17
+ * Filename: LandingActivity.java
+ * Assignment: GuessingGame (#2)
+ * Description: Displays a landing page that directs user to the actual gamplay
+ *              portion of the app.
+ */
+
 package com.example.perty.guessinggame;
 
 import android.content.Intent;

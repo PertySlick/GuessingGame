@@ -1,3 +1,12 @@
+/* Name: Timothy Roush
+ * Date: 10/07/17
+ * Filename: GuessingActivity.java
+ * Assignment: GuessingGame (#2)
+ * Description: Provides the actual gameplay portion of this app where the user
+ *              attempts to guess the randomly generated number in as few tries
+ *              as possible.
+ */
+
 package com.example.perty.guessinggame;
 
 import android.content.Intent;
