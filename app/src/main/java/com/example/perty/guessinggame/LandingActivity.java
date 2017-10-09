@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class LandingActivity extends AppCompatActivity {
 
 
-// VARIABLES CONSTANTS AND OBJECTS
+// FIELDS CONSTANTS AND OBJECTS
 
 
     Button submit;

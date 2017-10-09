@@ -70,4 +70,13 @@ public class NumberGuess {
     public int getGuessCount() {
         return guessCount;
     }
+
+
+    public int getMax() {
+        return max;
+    }
+
+    public int getMin() {
+        return min;
+    }
 }

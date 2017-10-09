@@ -38,14 +38,20 @@ public class GuessingActivity extends AppCompatActivity {
 
     // Identify necessary views
     private void locateViews() {
-        submit = (Button) findViewById(R.id.submit_button);
+        submit = (Button) findViewById(R.id.guess_submit);
         header = (TextView) findViewById(R.id.header);
         input = (EditText) findViewById(R.id.guess_input);
     }
 
     // Initiates the NumberGuess subroutine
     private void initiateSubroutines() {
-       game = new NumberGuess();
+        game = new NumberGuess();
+
+        int min = game.getMin();
+        int max = game.getMax();
+        String headerText = getString(R.string.guessing_header, min, max);
+
+        header.setText(headerText);
     }
 
     // Apply functionality to views
@@ -56,7 +62,7 @@ public class GuessingActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (input.getText().toString().trim().length() == 0) {
-                    errorToast("@string/guessing_error_empty");
+                    errorToast(getString(R.string.guessing_error_empty));
                 } else {
                     int guess = Integer.parseInt(input.getText().toString());
                     int result = game.checkGuess(guess);
@@ -77,6 +83,6 @@ public class GuessingActivity extends AppCompatActivity {
 
     // Reuseable Toast maker
     private void errorToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 }
